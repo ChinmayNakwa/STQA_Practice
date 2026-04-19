@@ -23,12 +23,13 @@ def count_objects():
         wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
         print("Page loaded successfully")
 
-        elements = driver.find_elements(By.XPATH, "//*")
+        # elements = driver.find_elements(By.XPATH, "//*")
+        elements = driver.find_elements(By.XPATH, "//body//*")
         total = len(elements)
 
         print("\nTotal number of objects on page:", total)
 
-        tags = ["div", "p", "span", "a", "button", "input"]
+        tags = ["h1", "div", "p", "span", "a", "button", "input"]
 
         print("\n--- Object Count by Type ---")
         for tag in tags:
